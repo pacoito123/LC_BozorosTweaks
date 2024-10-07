@@ -12,7 +12,7 @@ namespace BozorosTweaks
     [BepInPlugin(GUID, PLUGIN_NAME, VERSION)]
     public class Plugin : BaseUnityPlugin
     {
-        internal const string GUID = "pacoito.BozorosTweaks", PLUGIN_NAME = "BozorosTweaks", VERSION = "1.0.0";
+        internal const string GUID = "pacoito.BozorosTweaks", PLUGIN_NAME = "BozorosTweaks", VERSION = "1.0.1";
         internal static ManualLogSource? StaticLogger { get; private set; }
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace BozorosTweaks
 
                 // Apply all patches.
                 Harmony.PatchAll(typeof(LoadPatches));
-                // Harmony.PatchAll(typeof(ClownGiantPatch));
+                Harmony.PatchAll(typeof(ClownGiantPatch));
                 // Harmony.PatchAll(typeof(EnemiesPatch));
                 // ...
 
