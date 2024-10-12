@@ -19,9 +19,9 @@ Due to the Bozoros project files not exactly being accessible anymore (a lot of 
 
 - Fixes for Teller (Clown Giant) enemy variant:
   - Clown Giants no longer completely break when killed.
-    - [Missing components](https://1a3.uk/lethal_company/versions/v50_1?tab=6#ForestGiantAI.cs) that were introduced to the Forest Giant prefab in `v50` are now haphazardly added at runtime to stop Clown Giants from erroring out.
+    - [Missing components](https://1a3.uk/lethal_company/versions/v50_1?tab=6#ForestGiantAI.cs) that were introduced to the Forest Giant prefab in `v50` are now haphazardly added to Clown Giants at runtime in order to stop them from erroring out.
   - Clown Giant falling animation now properly plays on death, leaving its body collapsed on the ground.
-    - Haven't confirmed if a player standing under a falling Clown Giant actually takes damage, but it's likely to be the case.
+    - Players _will_ still be killed if a dying Clown Giant lands on their head.
   - Clown Giants are no longer fireproof and properly play their burning animation when set on fire.
     - They can be set on fire through the same means as regular Forest Giants (e.g. Cruiser explosion, lightning strike, meteor strike).
   - Missing falling and burning sound effects added to Clown Giants.
@@ -29,6 +29,10 @@ Due to the Bozoros project files not exactly being accessible anymore (a lot of 
     - Only vanilla sound effects are played at the moment, but custom goofy sound effects could be added in the future.
   - Clown Giants' health amount now matches the same value as regular Forest Giants (`38 HP`, if not modified by another mod).
   - Company Cruiser is no longer able to instantly kill Clown Giants at any speed, and a minimum velocity is required (same requirement as regular Forest Giants).
+- Adjustments to colliders on top of tents:
+  - Removed additional colliders on top of circular tents, since they've already got a mesh collider component.
+  - Made colliders on top of rectangular tents a lot more reasonably sized.
+    - Allows for Jetpack use and Cruiser aerial maneuvers without crashing into invisible walls.
 
 ## Planned Features
 

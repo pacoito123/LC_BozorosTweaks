@@ -59,6 +59,9 @@ namespace BozorosTweaks.Patches
             __instance.deathFallPosition = Object.Instantiate(ForestGiantPrefab.transform.Find("FallPosition"),
                 __instance.transform, false);
             __instance.deathFallPosition.name = "FallPosition";
+
+            // ClownGiants are spawned within Bozoros' scene, might as well set this here instead of calling 'Object.FindObjectsOfType()' to find stuff.
+            LoadPatches.BozorosScene = __instance.gameObject.scene;
         }
     }
 }
